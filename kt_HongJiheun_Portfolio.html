@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍지흔 | KT Nasmedia Media Planner Portfolio</title>
+    <meta name="description" content="영상 미학에 대한 이해와 AI·데이터 분석 역량을 결합하여 최적의 타겟팅 전략을 설계하는 미디어 플래너, 홍지흔의 포트폴리오입니다.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== DESIGN TOKENS (KT BRAND COLORS) ===== */
+        :root, [data-theme="light"] {
+            --font-display: 'Instrument Serif', 'Noto Sans KR', serif;
+            --font-body: 'Noto Sans KR', 'Satoshi', sans-serif;
+            /* Fluid Typography */
+            --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+            --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+            --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.35rem);
+            --text-xl: clamp(1.35rem, 1.2rem + 1.25vw, 2rem);
+            --text-2xl: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
+            --text-3xl: clamp(2.25rem, 1rem + 4vw, 4.5rem);
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            /* Theme Colors - Light */
+            --color-bg: #f9f9fa;
+            --color-surface: #ffffff;
+            --color-surface-offset: #f1f2f4;
+            --color-divider: #e5e7eb;
+            --color-border: #d1d5db;
+            --color-text: #111827;
+            --color-text-muted: #4b5563;
+            --color-text-faint: #9ca3af;
+            --color-text-inverse: #ffffff;
+            /* KT Red Palette */
+            --color-primary: #E30613;
+            --color-primary-hover: #C20510;
+            --color-primary-active: #9E040D;
+            --color-primary-highlight: #FDE7E8;
+            --color-accent: #2B2A29; /* KT Black/Dark Gray */
+            /* Radius & Shadows */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 8px 16px rgba(227, 6, 19, 0.06);
+            --shadow-lg: 0 16px 32px rgba(227, 6, 19, 0.08);
+            --transition-interactive: 300ms cubic-bezier(0.25, 1, 0.5, 1);
+            /* Layout */
+            --content-narrow: 640px;
+            --content-default: 960px;
+            --content-wide: 1200px;
+        }
+
+        [data-theme="dark"] {
+            --color-bg: #121212;
+            --color-surface: #1e1e1e;
+            --color-surface-offset: #2d2d2d;
+            --color-divider: #333333;
+            --color-border: #404040;
+            --color-text: #f3f4f6;
+            --color-text-muted: #9ca3af;
+            --color-text-faint: #6b7280;
+            --color-text-inverse: #121212;
+            /* KT Red Dark Mode Adjusted */
+            --color-primary: #FF3B47;
+            --color-primary-hover: #E30613;
+            --color-primary-active: #C20510;
+            --color-primary-highlight: #3A0B0E;
+            --color-accent: #E5E7EB;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.4);
+            --shadow-md: 0 8px 16px rgba(0,0,0,0.5);
+            --shadow-lg: 0 16px 32px rgba(0,0,0,0.6);
+        }
+
+        /* ===== BASE ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(64px + var(--space-8));
+        }
+
+        body {
+            min-height: 100dvh;
+            line-height: 1.65;
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        img, picture, video, canvas, svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            word-break: keep-all;
+        }
+
+        strong {
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        p, li {
+            word-break: keep-all;
+        }
+
+        input, button, textarea, select {
+            font: inherit;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ::selection {
+            background: var(--color-primary-highlight);
+            color: var(--color-primary-hover);
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 4px;
+            border-radius: var(--radius-sm);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: var(--content-wide);
+            margin-inline: auto;
+            padding-inline: var(--space-6);
+            width: 100%;
+        }
+
+        .container--default {
+            max-width: var(--content-default);
+            margin-inline: auto;
+            padding-inline: var(--space-6);
+            width: 100%;
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(var(--color-bg), 0.85);
+            background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .nav__inner {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            letter-spacing: 0.02em;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+            .nav__logo span {
+                color: var(--color-primary);
+                font-weight: 900;
+            }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+        }
+
+        .nav__link {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-text-muted);
+            transition: color var(--transition-interactive);
+            padding: var(--space-2);
+        }
+
+            .nav__link:hover {
+                color: var(--color-primary);
+            }
+
+        .nav__cta {
+            padding: var(--space-2) var(--space-5);
+            background: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            transition: all var(--transition-interactive);
+        }
+
+            .nav__cta:hover {
+                background: var(--color-primary-hover);
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(227, 6, 19, 0.3);
+            }
+
+        .nav__toggle {
+            display: none;
+            padding: var(--space-2);
+            color: var(--color-text-muted);
+            border-radius: var(--radius-md);
+            transition: background var(--transition-interactive);
+        }
+
+            .nav__toggle:hover {
+                color: var(--color-primary);
+                background: var(--color-surface-offset);
+            }
+
+        .theme-toggle {
+            padding: var(--space-2);
+            color: var(--color-text-muted);
+            border-radius: var(--radius-full);
+            transition: all var(--transition-interactive);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .theme-toggle:hover {
+                color: var(--color-primary);
+                background: var(--color-primary-highlight);
+            }
+
+        @media (max-width: 768px) {
+            .nav__links {
+                display: none;
+            }
+
+            .nav__toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav__links.is-open {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--space-2);
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: var(--color-bg);
+                padding: var(--space-6);
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+
+                .nav__links.is-open .nav__link {
+                    text-align: left;
+                    padding: var(--space-3) var(--space-2);
+                    width: 100%;
+                }
+
+                .nav__links.is-open .nav__cta {
+                    text-align: center;
+                    margin-top: var(--space-2);
+                }
+
+                .nav__links.is-open .theme-toggle {
+                    align-self: flex-start;
+                    margin-left: var(--space-2);
+                }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding-top: calc(64px + var(--space-20));
+            padding-bottom: var(--space-24);
+            background: var(--color-bg);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero__blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            mix-blend-mode: multiply;
+            opacity: 0.15;
+            animation: float 10s ease-in-out infinite alternate;
+        }
+
+        [data-theme="dark"] .hero__blob {
+            mix-blend-mode: screen;
+            opacity: 0.1;
+        }
+
+        /* KT Red Blobs */
+        .hero__blob--1 {
+            width: 50vw;
+            height: 50vw;
+            max-width: 500px;
+            max-height: 500px;
+            background: #FF999F;
+            top: -10%;
+            left: -5%;
+        }
+
+        .hero__blob--2 {
+            width: 40vw;
+            height: 40vw;
+            max-width: 400px;
+            max-height: 400px;
+            background: #E30613;
+            top: 20%;
+            right: -10%;
+            animation-delay: -3s;
+        }
+
+        .hero__blob--3 {
+            width: 30vw;
+            height: 30vw;
+            max-width: 300px;
+            max-height: 300px;
+            background: #2B2A29;
+            bottom: -5%;
+            left: 35%;
+            animation-delay: -6s;
+            opacity: 0.1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(30px, -30px) scale(1.05);
+            }
+        }
+
+        .hero__inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: var(--color-primary-highlight);
+            border: 1px solid var(--color-primary);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-8);
+            box-shadow: 0 4px 10px rgba(227, 6, 19, 0.1);
+        }
+
+            .hero__badge::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                background: var(--color-primary);
+                border-radius: 50%;
+            }
+
+        .hero__title {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: var(--space-6);
+            line-height: 1.25;
+            word-break: keep-all;
+        }
+
+        .hero__sub {
+            font-size: var(--text-lg);
+            color: var(--color-text-muted);
+            max-width: 720px;
+            margin: 0 auto var(--space-10);
+            line-height: 1.7;
+        }
+
+        .hero__actions {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: 14px 32px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            transition: all var(--transition-interactive);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn--primary {
+            background: var(--color-primary);
+            color: white;
+            border: 1px solid var(--color-primary);
+        }
+
+            .btn--primary:hover {
+                background: var(--color-primary-hover);
+                border-color: var(--color-primary-hover);
+                box-shadow: 0 8px 24px rgba(227, 6, 19, 0.3);
+                transform: translateY(-2px);
+            }
+
+        .btn--ghost {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+
+            .btn--ghost:hover {
+                background: var(--color-surface-offset);
+                border-color: var(--color-text-muted);
+                transform: translateY(-2px);
+            }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-16);
+        }
+
+        .section-header__label {
+            font-size: var(--text-xs);
+            font-weight: 800;
+            color: var(--color-primary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-3);
+            display: block;
+        }
+
+        .section-header__title {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: 500;
+            color: var(--color-text);
+            line-height: 1.3;
+        }
+
+        /* ===== COMPETENCY ===== */
+        .competency {
+            padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-divider);
+            border-bottom: 1px solid var(--color-divider);
+        }
+
+        .competency__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .competency__card {
+            padding: var(--space-8);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+            display: flex;
+            flex-direction: column;
+        }
+
+            .competency__card:hover {
+                transform: translateY(-6px);
+                box-shadow: var(--shadow-md);
+                border-color: var(--color-primary);
+            }
+
+        .competency__icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-primary-highlight);
+            color: var(--color-primary);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-6);
+            font-size: 1.6rem;
+        }
+
+        .competency__title {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+            color: var(--color-text);
+            line-height: 1.4;
+        }
+
+        .competency__desc {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        /* ===== EXPERIENCE TIMELINE ===== */
+        .experience {
+            padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+            background: var(--color-bg);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 20px;
+                bottom: 20px;
+                width: 2px;
+                background: linear-gradient(to bottom, transparent, var(--color-border) 10%, var(--color-border) 90%, transparent);
+            }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 24px;
+                transform: none;
+            }
+        }
+
+        .timeline__item {
+            display: flex;
+            gap: var(--space-8);
+            margin-bottom: var(--space-12);
+            position: relative;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+            .timeline__item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+        @media (max-width: 768px) {
+            .timeline__item, .timeline__item:nth-child(even) {
+                flex-direction: column;
+                padding-left: var(--space-16);
+                margin-bottom: var(--space-10);
+                gap: var(--space-4);
+                align-items: flex-start;
+            }
+        }
+
+        .timeline__dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: white;
+            border: 4px solid var(--color-bg);
+            z-index: 2;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 1px var(--color-border);
+        }
+
+        @media (max-width: 768px) {
+            .timeline__dot {
+                left: 2px;
+                top: 0;
+                transform: none;
+            }
+        }
+
+        .timeline__dot--blue {
+            background: var(--color-primary);
+        }
+
+        .timeline__dot--navy {
+            background: var(--color-accent);
+        }
+
+        .timeline__dot--cyan {
+            background: #FF6B6B;
+        }
+
+        .timeline__dot--gray {
+            background: var(--color-text-faint);
+        }
+
+        .timeline__content {
+            width: calc(50% - var(--space-8));
+            padding: var(--space-6) var(--space-8);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition-interactive), transform var(--transition-interactive);
+        }
+
+            .timeline__content:hover {
+                box-shadow: var(--shadow-md);
+                transform: translateY(-3px);
+            }
+
+        @media (max-width: 768px) {
+            .timeline__content {
+                width: 100%;
+                padding: var(--space-5);
+            }
+        }
+
+        .timeline__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-4);
+            margin-bottom: var(--space-2);
+            flex-wrap: wrap;
+        }
+
+        .timeline__title {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .timeline__date {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .timeline__date--blue {
+            background: var(--color-primary-highlight);
+            color: var(--color-primary-active);
+        }
+
+        .timeline__date--navy {
+            background: rgba(43, 42, 41, 0.1);
+            color: var(--color-accent);
+        }
+
+        [data-theme="dark"] .timeline__date--navy {
+            background: rgba(229, 231, 235, 0.1);
+            color: #E5E7EB;
+        }
+
+        .timeline__date--cyan {
+            background: rgba(255, 107, 107, 0.1);
+            color: #D93838;
+        }
+
+        [data-theme="dark"] .timeline__date--cyan {
+            background: rgba(255, 107, 107, 0.2);
+            color: #FF8787;
+        }
+
+        .timeline__date--gray {
+            background: var(--color-surface-offset);
+            color: var(--color-text-muted);
+        }
+
+        .timeline__org {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .timeline__desc {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects {
+            padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-divider);
+        }
+
+        .projects__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-8);
+        }
+
+        @media (max-width: 768px) {
+            .projects__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
+            display: flex;
+            flex-direction: column;
+        }
+
+            .project-card:hover {
+                transform: translateY(-8px);
+                box-shadow: var(--shadow-lg);
+                border-color: var(--color-primary);
+            }
+
+        .project-card__thumb {
+            height: 220px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-card__thumb-title {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: 500;
+            font-style: italic;
+            opacity: 0.8;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .project-card:hover .project-card__thumb-title {
+            transform: scale(1.08);
+            opacity: 1;
+        }
+
+        .project-card__badge {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            padding: 4px 12px;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            border-radius: var(--radius-full);
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .project-card__body {
+            padding: var(--space-6) var(--space-8);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card__title {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: var(--space-2);
+            line-height: 1.4;
+        }
+
+        .project-card__subtitle {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .project-card__desc {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: var(--space-6);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        .project-card__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-top: auto;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            background: var(--color-surface-offset);
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+        }
+
+        /* Color Adjustments for KT */
+        .thumb--cyan {
+            background: linear-gradient(135deg, #E30613, #B2050F);
+        }
+
+        .thumb--slate {
+            background: linear-gradient(135deg, #64748b, #475569);
+        }
+
+        .thumb--navy {
+            background: linear-gradient(135deg, #2B2A29, #111111);
+        }
+
+        .thumb--teal {
+            background: linear-gradient(135deg, #FF6B6B, #C92A2A);
+        }
+
+        [data-theme="dark"] .thumb--cyan {
+            background: linear-gradient(135deg, #B2050F, #8A040B);
+        }
+
+        [data-theme="dark"] .thumb--slate {
+            background: linear-gradient(135deg, #334155, #1e293b);
+        }
+
+        [data-theme="dark"] .thumb--navy {
+            background: linear-gradient(135deg, #1A1A1A, #000000);
+        }
+
+        [data-theme="dark"] .thumb--teal {
+            background: linear-gradient(135deg, #C92A2A, #9B1C1C);
+        }
+
+        /* ===== TOOLS ===== */
+        .tools {
+            padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+            background: var(--color-bg);
+        }
+
+        .tools__card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-2xl);
+            padding: clamp(var(--space-8), 5vw, var(--space-12));
+            max-width: var(--content-default);
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tools__intro {
+            font-size: var(--text-base);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-8);
+            line-height: 1.6;
+        }
+
+        .tools__chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-3);
+        }
+
+        .chip {
+            padding: 8px 20px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-text);
+            transition: all var(--transition-interactive);
+            cursor: default;
+        }
+
+            .chip:hover {
+                border-color: var(--color-primary);
+                color: var(--color-primary);
+                background: var(--color-primary-highlight);
+                transform: translateY(-2px);
+            }
+
+        .chip--primary {
+            border-color: var(--color-primary);
+            background: var(--color-primary-highlight);
+            color: var(--color-primary-active);
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+            .modal.is-open {
+                display: flex;
+                opacity: 1;
+            }
+
+        .modal__panel {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-2xl);
+            max-width: 720px;
+            width: 100%;
+            max-height: 90dvh;
+            overflow-y: auto;
+            padding: calc(var(--space-12) + 24px) clamp(var(--space-6), 4vw, var(--space-10)) clamp(var(--space-6), 4vw, var(--space-10));
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-border) transparent;
+            transform: translateY(30px);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .modal.is-open .modal__panel {
+            transform: translateY(0);
+        }
+
+        .modal__panel::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal__panel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .modal__panel::-webkit-scrollbar-thumb {
+            background-color: var(--color-border);
+            border-radius: 10px;
+        }
+
+        .modal__close {
+            position: absolute;
+            top: var(--space-6);
+            right: var(--space-6);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            transition: all var(--transition-interactive);
+            z-index: 10;
+        }
+
+            .modal__close:hover {
+                color: var(--color-primary);
+                background: var(--color-primary-highlight);
+                border-color: var(--color-primary);
+                transform: rotate(90deg);
+            }
+
+        .modal__badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            background: var(--color-primary-highlight);
+            color: var(--color-primary-active);
+        }
+
+        .modal__title {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: var(--space-8);
+            line-height: 1.3;
+        }
+
+        .modal__block {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .modal__block-title {
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: var(--space-3);
+        }
+
+        .modal__block-text {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin-bottom: var(--space-2);
+        }
+
+            .modal__block-text:last-child {
+                margin-bottom: 0;
+            }
+
+        .modal__highlight {
+            background: var(--color-primary-highlight);
+            border: 1px solid rgba(227, 6, 19, 0.2);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .modal__highlight-title {
+            font-size: var(--text-sm);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-3);
+            color: var(--color-primary-active);
+        }
+
+        .modal__highlight-text {
+            font-size: var(--text-sm);
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+
+        .modal__list-section {
+            margin-bottom: var(--space-6);
+        }
+
+        .modal__list-title {
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--color-text);
+            border-left: 4px solid var(--color-primary);
+            padding-left: var(--space-3);
+            margin-bottom: var(--space-4);
+        }
+
+        .modal__list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            .modal__list li {
+                font-size: var(--text-sm);
+                color: var(--color-text-muted);
+                line-height: 1.7;
+                margin-bottom: var(--space-3);
+                position: relative;
+                padding-left: var(--space-4);
+            }
+
+                .modal__list li::before {
+                    content: '•';
+                    position: absolute;
+                    left: 0;
+                    color: var(--color-primary);
+                    font-weight: bold;
+                }
+
+        .modal__btn {
+            width: 100%;
+            padding: var(--space-4);
+            background: var(--color-surface-offset);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            transition: all var(--transition-interactive);
+            margin-top: var(--space-4);
+        }
+
+            .modal__btn:hover {
+                background: var(--color-text);
+                color: var(--color-text-inverse);
+            }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: clamp(var(--space-12), 8vw, var(--space-20)) 0;
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-divider);
+        }
+
+        .footer__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-12);
+            flex-wrap: wrap;
+        }
+
+        .footer__headline {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: 500;
+            color: var(--color-text);
+            line-height: 1.3;
+            margin-bottom: var(--space-4);
+        }
+
+        .footer__sub {
+            font-size: var(--text-base);
+            color: var(--color-text-muted);
+        }
+
+        .footer__contact {
+            text-align: right;
+            margin-left: auto;
+        }
+
+        .footer__name {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: var(--space-2);
+        }
+
+        .footer__role {
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--space-5);
+        }
+
+        .footer__info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: var(--space-1);
+        }
+
+        .footer__info-item {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-text-muted);
+            transition: color var(--transition-interactive);
+        }
+
+            .footer__info-item:hover {
+                color: var(--color-primary);
+            }
+
+        @media (max-width: 768px) {
+            .footer__inner {
+                flex-direction: column;
+                gap: var(--space-10);
+            }
+
+            .footer__contact {
+                width: 100%;
+                text-align: right;
+            }
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+            .reveal.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        .reveal--delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal--delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal--delay-3 {
+            transition-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main" class="sr-only" style="position:absolute; top:-100%; left:var(--space-4); padding:var(--space-3) var(--space-5); background:var(--color-primary); color:white; font-weight:bold; border-radius:var(--radius-md); z-index:9999; transition:top 0.3s;" onfocus="this.style.top='var(--space-4)'" onblur="this.style.top='-100%'">본문 바로가기</a>
+
+    <nav class="nav" role="navigation" aria-label="메인 내비게이션">
+        <div class="container nav__inner">
+            <div class="nav__logo" aria-label="홍지흔 포트폴리오">JIHEUN<span>.</span>HONG</div>
+            <div class="nav__links" id="nav-links">
+                <a href="#about" class="nav__link">비전</a>
+                <a href="#competency" class="nav__link">핵심 역량</a>
+                <a href="#experience" class="nav__link">경험</a>
+                <a href="#projects" class="nav__link">프로젝트</a>
+                <a href="#tools" class="nav__link">기술 스택</a>
+                <button class="theme-toggle" data-theme-toggle aria-label="테마 전환">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+                </button>
+                <a href="#contact" class="nav__cta">연락하기</a>
+            </div>
+            <button class="nav__toggle" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main">
+
+        <section id="about" class="hero" aria-label="소개">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__blob hero__blob--1"></div>
+                <div class="hero__blob hero__blob--2"></div>
+                <div class="hero__blob hero__blob--3"></div>
+            </div>
+            <div class="container--default hero__inner">
+                <div class="hero__badge reveal">데이터 기반 타겟팅 · 매체 전략 수립 · 캠페인 퍼포먼스 최적화</div>
+                <h1 class="hero__title reveal reveal--delay-1">
+                    소비자의 <strong>데이터를 해독</strong>하고,<br>
+                    최적의 <strong>미디어 여정을 설계</strong>합니다.
+                </h1>
+                <p class="hero__sub reveal reveal--delay-2">
+                    영상 미학에 대한 깊은 이해와 AI/데이터 기반의 분석 역량을 결합하여,<br>
+                    단순한 노출을 넘어 타겟의 마음을 움직이는 시각적 맥락을 찾아냅니다.<br>
+                    정밀한 데이터 타겟팅으로 나스미디어의 광고 퍼포먼스를 극대화하겠습니다.
+                </p>
+                <div class="hero__actions reveal reveal--delay-3">
+                    <a href="#projects" class="btn btn--primary">미디어 기획 프로젝트 보기</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="competency" class="competency" aria-label="핵심 역량">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-header__label">Core Competency</span>
+                    <h2 class="section-header__title">퍼포먼스 극대화를 위한 <strong>미디어 플래닝 역량</strong></h2>
+                </div>
+                <div class="competency__grid">
+                    <div class="competency__card reveal reveal--delay-1">
+                        <div class="competency__icon" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+                        </div>
+                        <h3 class="competency__title">데이터 기반 타겟 페르소나 설계</h3>
+                        <p class="competency__desc">행동 심리 연구 및 플랫폼 창업 경험을 바탕으로, 추상적인 오디언스를 정밀한 페르소나 데이터로 모델링하여 매체 접점을 발굴합니다.</p>
+                    </div>
+                    <div class="competency__card reveal reveal--delay-2">
+                        <div class="competency__icon" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
+                        </div>
+                        <h3 class="competency__title">소재와 매체의 핏 얼라인</h3>
+                        <p class="competency__desc">영상 제작 프로세스와 3D 비주얼에 대한 이해도를 통해, 디지털 옥외광고, 동영상 광고 등 각 매체 환경에 최적화된 크리에이티브 시너지 전략을 제안합니다.</p>
+                    </div>
+                    <div class="competency__card reveal reveal--delay-3">
+                        <div class="competency__icon" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
+                        </div>
+                        <h3 class="competency__title">AI/애드테크 활용 및 퍼포먼스 최적화</h3>
+                        <p class="competency__desc">멀티 에이전트 AI 프레임워크 연구 및 데이터 분석 경험을 살려, 광고 효율 데이터를 추적하고 A/B 테스트를 통한 캠페인 최적화를 이끌어냅니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience" aria-label="경험 및 리더십">
+            <div class="container--default">
+                <div class="section-header reveal">
+                    <span class="section-header__label">Experience</span>
+                    <h2 class="section-header__title"><strong>데이터와 비주얼</strong>의 경계를 넘나들다</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot timeline__dot--blue" aria-hidden="true">AI</div>
+                        <div class="timeline__content">
+                            <div class="timeline__header">
+                                <h3 class="timeline__title">인공지능융합 연구실(LAMDA) 랩장</h3>
+                                <span class="timeline__date timeline__date--blue">2024 – 2026</span>
+                            </div>
+                            <p class="timeline__org">성균관대학교 실감미디어공학과</p>
+                            <p class="timeline__desc">다수의 AI 에이전트 및 사용자 개입 시스템 연구 프로젝트를 총괄했습니다. 복잡한 데이터를 분석하여 유의미한 패턴을 도출하고, 이를 다학제 팀과 조율하여 3편의 SCIE 논문 성과를 이끌어낸 리더십과 데이터 해독력을 갖추었습니다.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot timeline__dot--navy" aria-hidden="true">UX</div>
+                        <div class="timeline__content">
+                            <div class="timeline__header">
+                                <h3 class="timeline__title">소셜 웰페어 플랫폼 'Butwi' 창업 및 기획</h3>
+                                <span class="timeline__date timeline__date--navy">2024 – 2025</span>
+                            </div>
+                            <p class="timeline__org">스타트업 창업 및 프로덕트 매니징</p>
+                            <p class="timeline__desc">사용자 맞춤형 복지 정보 제공 AI 플랫폼을 기획하고 프로토타입을 개발했습니다. 명확한 타겟 오디언스 설정과 서비스 사용 여정을 설계하여 다수의 경진대회에서 수상하며 비즈니스 기획력을 입증했습니다.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot timeline__dot--cyan" aria-hidden="true">UX</div>
+                        <div class="timeline__content">
+                            <div class="timeline__header">
+                                <h3 class="timeline__title">글로벌 파견 연구원 (행동 심리 및 UX)</h3>
+                                <span class="timeline__date timeline__date--cyan">2024</span>
+                            </div>
+                            <p class="timeline__org">펜실베니아 주립대학교</p>
+                            <p class="timeline__desc">사용자 행동 분석 및 디지털 개입 서비스를 기획했습니다. 타겟의 심리적 반응을 유도하는 트리거를 설계한 경험은, 소비자의 미디어 반응을 예측하고 최적의 광고 노출 맥락을 찾는 데 강력한 무기가 됩니다.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot timeline__dot--gray" aria-hidden="true">BA</div>
+                        <div class="timeline__content">
+                            <div class="timeline__header">
+                                <h3 class="timeline__title">창의소프트학부 · 영상디자인 전공</h3>
+                                <span class="timeline__date timeline__date--gray">2020 – 2024</span>
+                            </div>
+                            <p class="timeline__org">세종대학교 (학사) / 스튜디오 미르 인턴십</p>
+                            <p class="timeline__desc">시각 서사와 색채 심리를 전공하고, 글로벌 애니메이션 스튜디오에서 비주얼 파이프라인을 실무로 체득했습니다. 디지털 영상, 3D 에셋 등 매체에 게재될 광고 소재의 특성을 누구보다 정확하게 파악하고 미디어 전략과 결합할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects" aria-label="기획 및 연구 프로젝트">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-header__label">Projects</span>
+                    <h2 class="section-header__title">데이터 기반 <strong>전략 기획 포트폴리오</strong></h2>
+                </div>
+                <div class="projects__grid">
+
+                    <article class="project-card reveal reveal--delay-1" onclick="openModal('modal-tanos')" role="button" tabindex="0" aria-label="TANOS & SHIFT 프로젝트 자세히 보기">
+                        <div class="project-card__thumb thumb--cyan">
+                            <span class="project-card__thumb-title">TANOS & SHIFT</span>
+                            <span class="project-card__badge" style="background:var(--color-accent);">미디어 트렌드 분석</span>
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">미디어 소비 패턴 분석 및 콘텐츠 타겟팅 기획</h3>
+                            <p class="project-card__subtitle">숏폼/영상 데이터 기반 타겟 행동 분석</p>
+                            <p class="project-card__desc">대중의 콘텐츠 소비 행동 데이터를 분석하여 유의미한 시각적 반응 패턴을 도출하고, 이를 바탕으로 타겟 그룹별 맞춤형 미디어 노출 전략을 수립하는 기획 방법론입니다.</p>
+                            <div class="project-card__tags">
+                                <span class="tag">#미디어소비분석</span>
+                                <span class="tag">#트렌드리서치</span>
+                                <span class="tag">#데이터기반기획</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal reveal--delay-2" onclick="openModal('modal-revai')" role="button" tabindex="0" aria-label="RevAI 프로젝트 자세히 보기">
+                        <div class="project-card__thumb thumb--slate">
+                            <span class="project-card__thumb-title">RevAI</span>
+                            <span class="project-card__badge" style="background:#1e293b;">캠페인 최적화</span>
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">멀티 에이전트 기반 데이터 검증 프로세스 설계</h3>
+                            <p class="project-card__title" style="font-size:14px; font-weight:normal; margin-top:-5px;">(임상 문서 복원 및 다단계 QA 모델링)</p>
+                            <p class="project-card__desc">여러 역할을 수행하는 인공지능이 데이터를 상호 검증하도록 설계하여 정보 누락을 24%p 개선한 프로젝트입니다. 대규모 광고 캠페인 집행 시 발생할 수 있는 데이터 오류를 방지하는 논리적 품질 관리 역량입니다.</p>
+                            <div class="project-card__tags">
+                                <span class="tag">#퍼포먼스QA</span>
+                                <span class="tag">#에이전트모델링</span>
+                                <span class="tag">#데이터정합성</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal reveal--delay-1" onclick="openModal('modal-nicocall')" role="button" tabindex="0" aria-label="NicoCall 프로젝트 자세히 보기">
+                        <div class="project-card__thumb thumb--navy">
+                            <span class="project-card__thumb-title">NicoCall</span>
+                            <span class="project-card__badge" style="background:#E30613; color:white;">뉴미디어 기획</span>
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">행동 개입을 위한 3D 아바타 비주얼 매체 기획</h3>
+                            <p class="project-card__subtitle">미래 자아 시각화 및 몰입도 측정</p>
+                            <p class="project-card__desc">XR 및 디지털 매체 환경에서 타겟의 자기효능감을 5.6배 증진시킨 시각화 프로젝트입니다. 매체의 특성과 3D 영상 소재가 결합했을 때 발생하는 유저 임팩트를 정량적으로 검증했습니다.</p>
+                            <div class="project-card__tags">
+                                <span class="tag">#디지털매체비주얼</span>
+                                <span class="tag">#행동심리트리거</span>
+                                <span class="tag">#뉴미디어매체</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal reveal--delay-2" onclick="openModal('modal-sage')" role="button" tabindex="0" aria-label="SAGE & GREEN 프로젝트 자세히 보기">
+                        <div class="project-card__thumb thumb--teal">
+                            <span class="project-card__thumb-title">SAGE & GREEN</span>
+                            <span class="project-card__badge" style="background:#8A040B;">타겟 페르소나</span>
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">초개인화 타겟 페르소나 및 메시지 서사 기획</h3>
+                            <p class="project-card__subtitle">감성 스펙트럼 세분화 · 커뮤니케이션 모델링</p>
+                            <p class="project-card__desc">표면적인 인구통계학적 타겟팅을 넘어, 소비자 그룹의 감성 스펙트럼과 언어적 반응 패턴을 모델링하여 가장 높은 전환율을 이끌어낼 수 있는 맞춤형 광고 메시지 기획의 기초 프레임워크입니다.</p>
+                            <div class="project-card__tags">
+                                <span class="tag">#페르소나모델링</span>
+                                <span class="tag">#타겟세분화</span>
+                                <span class="tag">#메시지전략</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="tools" aria-label="기술 스택 및 도구">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-header__label">Tech Stack</span>
+                    <h2 class="section-header__title">데이터 분석 및 <strong>커뮤니케이션 역량</strong></h2>
+                </div>
+                <div class="tools__card reveal">
+                    <p class="tools__intro">
+                        방대한 미디어 데이터를 분석하는 파이썬 기반 역량부터, 광고 크리에이티브를 즉각적으로 검토할 수 있는 시각화 툴까지 퍼포먼스 마케팅과 미디어 플래닝에 최적화된 스택을 보유하고 있습니다.
+                    </p>
+                    <div class="tools__chips">
+                        <span class="chip chip--primary">Python / PyTorch (데이터 분석)</span>
+                        <span class="chip chip--primary">SQL / Tableau 기반 이해도</span>
+                        <span class="chip chip--primary">AI Prompt Engineering</span>
+                        <span class="chip chip--primary">Figma (UI/UX 프로토타이핑)</span>
+                        <span class="chip">Adobe Photoshop / After Effects</span>
+                        <span class="chip">Unity / Unreal / 3D Tools</span>
+                        <span class="chip">Notion / Jira / Slack (애자일 협업)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="footer" aria-label="연락처">
+        <div class="container footer__inner">
+            <div class="reveal">
+                <h2 class="footer__headline">데이터와 비주얼을 연결하여<br><strong>최고의 광고 퍼포먼스</strong>를 증명하겠습니다.</h2>
+                <p class="footer__sub">애드테크 기반의 정밀한 타겟팅으로 KT 나스미디어의 성장을 이끄는 미디어 플래너가 되겠습니다.</p>
+            </div>
+            <div class="footer__contact reveal">
+                <p class="footer__name">홍지흔</p>
+                <p class="footer__role">Media Planner Applicant</p>
+                <div class="footer__info">
+                    <span class="footer__info-item">M. 010-5255-6945</span>
+                    <a href="mailto:wlgms02@naver.com" class="footer__info-item">E. wlgms02@naver.com</a>
+                    <span class="footer__info-item" style="color:var(--color-text-faint); font-weight:400; margin-top:4px;">Seoul, Republic of Korea</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 모달 내용 -->
+    <div id="modal-tanos" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-tanos-title">
+        <div class="modal__panel">
+            <button class="modal__close" onclick="closeModal('modal-tanos')" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 18M6 6l12 12" /></svg>
+            </button>
+            <span class="modal__badge">트렌드 리서치 · 미디어 소비 분석</span>
+            <h3 class="modal__title" id="modal-tanos-title">TANOS & SHIFT: 미디어 소비 패턴 분석 및 트렌드 기획</h3>
+            <div class="modal__block">
+                <p class="modal__block-title">💡 기획 배경 및 해결 전략</p>
+                <p class="modal__block-text">
+                    <strong>문제 상황:</strong> 뉴미디어 환경에서 타겟의 이탈률을 최소화하고 초기 인게이지먼트를 확보할 수 있는 콘텐츠 구조 분석이 필요했습니다.
+                </p>
+                <p class="modal__block-text">
+                    <strong>해결 전략:</strong> 숏폼 영상 등의 시청 지속 시간 및 행동 데이터를 분석하여 콘텐츠의 구조적 요인(초반 3초 훅, 시각적 리듬)을 체계화했습니다. 이를 광고 영상 송출 및 매체 노출 지면 기획에 적용 가능한 전략으로 발전시켰습니다.
+                </p>
+            </div>
+            <div class="modal__highlight">
+                <p class="modal__highlight-title">✨ KT 나스미디어 적용 포인트</p>
+                <p class="modal__highlight-text">유튜브, 틱톡 등 동영상 네트워크 매체 집행 시, 단순 매체 제안을 넘어 소재가 타겟의 시청 패턴에 부합하는지 데이터 기반으로 컨설팅할 수 있는 인사이트를 제공합니다.</p>
+            </div>
+            <div class="modal__list-section">
+                <p class="modal__list-title">핵심 성과 및 역량</p>
+                <ul class="modal__list">
+                    <li><strong>데이터 기반 타겟팅 구조화:</strong> 타겟의 몰입을 이끄는 시각적 구조 파악 및 매체 전략 반영.</li>
+                    <li><strong>광고 소재 최적화 제안:</strong> 매체 데이터 분석 결과를 기획 언어로 번역해 광고주 및 제작팀과 원활히 소통.</li>
+                </ul>
+            </div>
+            <button class="modal__btn" onclick="closeModal('modal-tanos')">닫기</button>
+        </div>
+    </div>
+
+    <div id="modal-revai" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-revai-title">
+        <div class="modal__panel">
+            <button class="modal__close" onclick="closeModal('modal-revai')" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+            </button>
+            <span class="modal__badge">데이터 검수 · 퍼포먼스 최적화</span>
+            <h3 class="modal__title" id="modal-revai-title">RevAI: 멀티 에이전트 기반 데이터 검증 프로세스</h3>
+            <div class="modal__block">
+                <p class="modal__block-title">💡 기획 배경 및 해결 전략</p>
+                <p class="modal__block-text">
+                    <strong>문제 상황:</strong> 대규모 임상 문서 데이터에서 발생하는 정보 누락 및 비일관성 문제를 해결하기 위한 자동화된 퀄리티 컨트롤 시스템이 필요했습니다.
+                </p>
+                <p class="modal__block-text">
+                    <strong>해결 전략:</strong> 각기 다른 역할을 가진 AI 에이전트가 상호 검증하는 파이프라인을 구축하여, 데이터 누락률을 24%p 대폭 개선하며 시스템의 정합성을 확보했습니다.
+                </p>
+            </div>
+            <div class="modal__highlight">
+                <p class="modal__highlight-title">✨ KT 나스미디어 적용 포인트</p>
+                <p class="modal__highlight-text">수백 개의 광고 캠페인이 동시다발적으로 돌아가는 프로그래매틱 환경에서, 예산 누수나 타겟팅 오류를 미연에 방지하고 퍼포먼스 데이터를 꼼꼼하게 검증하는 논리적 업무 수행 능력에 직결됩니다.</p>
+            </div>
+            <div class="modal__list-section">
+                <p class="modal__list-title">핵심 성과 및 역량</p>
+                <ul class="modal__list">
+                    <li><strong>다단계 검수 워크플로우 총괄:</strong> 에이전트 간 역할 분담 및 상호 검증 로직 매끄럽게 기획.</li>
+                    <li><strong>리스크 매니지먼트:</strong> 대규모 데이터 처리 과정의 오류를 선제적으로 방어하는 시스템 설계.</li>
+                </ul>
+            </div>
+            <button class="modal__btn" onclick="closeModal('modal-revai')">닫기</button>
+        </div>
+    </div>
+
+    <div id="modal-nicocall" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-nicocall-title">
+        <div class="modal__panel">
+            <button class="modal__close" onclick="closeModal('modal-nicocall')" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+            </button>
+            <span class="modal__badge">뉴미디어 매체 · 비주얼 몰입도</span>
+            <h3 class="modal__title" id="modal-nicocall-title">NicoCall: 행동 개입을 위한 3D 아바타 비주얼 매체 기획</h3>
+            <div class="modal__block">
+                <p class="modal__block-title">💡 기획 배경 및 해결 전략</p>
+                <p class="modal__block-text">
+                    <strong>문제 상황:</strong> 사용자의 행동 변화를 이끌어내기 위해, 매체 환경에서 시각적으로 가장 높은 몰입감을 줄 수 있는 솔루션이 필요했습니다.
+                </p>
+                <p class="modal__block-text">
+                    <strong>해결 전략:</strong> 3D 안면 재건 및 생성형 AI를 활용하여 '미래 자아' 아바타를 모델링하고, 이를 사용자 인터페이스에 적용하여 기존 대비 자기효능감을 5.6배 향상시키는 데 성공했습니다.
+                </p>
+            </div>
+            <div class="modal__highlight">
+                <p class="modal__highlight-title">✨ KT 나스미디어 적용 포인트</p>
+                <p class="modal__highlight-text">나스미디어의 주요 매체인 N.Square 등 디지털 옥외광고 및 XR 기반의 신규 미디어 광고 지면에서, 3D 영상 소재가 타겟에게 미치는 공간적/시각적 임팩트를 분석하고 매체 효율을 극대화하는 기획에 활용됩니다.</p>
+            </div>
+            <button class="modal__btn" onclick="closeModal('modal-nicocall')">닫기</button>
+        </div>
+    </div>
+
+    <div id="modal-sage" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-sage-title">
+        <div class="modal__panel">
+            <button class="modal__close" onclick="closeModal('modal-sage')" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+            </button>
+            <span class="modal__badge">타겟 모델링 · 맞춤형 전략</span>
+            <h3 class="modal__title" id="modal-sage-title">SAGE & GREEN: 초개인화 타겟 페르소나 및 메시지 기획</h3>
+            <div class="modal__block">
+                <p class="modal__block-title">💡 기획 배경 및 해결 전략</p>
+                <p class="modal__block-text">
+                    <strong>문제 상황:</strong> 광범위한 타겟팅으로는 개별 사용자의 공감을 이끌어내기 어렵습니다. 타겟의 성격과 감정 상태에 맞는 세밀한 소통 방식이 필요했습니다.
+                </p>
+                <p class="modal__block-text">
+                    <strong>해결 전략:</strong> 타겟의 심리적 특성을 감정 스펙트럼과 언어적 패턴으로 구조화하여, 다양한 매체 접점 상황에서도 일관되게 반응을 유도할 수 있는 다중 페르소나 모델링 체계를 수립했습니다.
+                </p>
+            </div>
+            <div class="modal__highlight">
+                <p class="modal__highlight-title">✨ KT 나스미디어 적용 포인트</p>
+                <p class="modal__highlight-text">DMP 기반의 오디언스 타겟팅 고도화 작업 시, 데이터를 기반으로 핵심 광고 수용자를 입체적으로 정의하여 매체별 맞춤형 광고 메시지와 A/B 테스트 시나리오를 기획하는 데 탁월한 능력을 발휘합니다.</p>
+            </div>
+            <button class="modal__btn" onclick="closeModal('modal-sage')">닫기</button>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        (function () {
+            const root = document.documentElement;
+            const toggles = document.querySelectorAll('[data-theme-toggle]');
+
+            let currentTheme = 'light';
+            root.setAttribute('data-theme', currentTheme);
+
+            function updateIcon() {
+                toggles.forEach(t => {
+                    t.setAttribute('aria-label', currentTheme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환');
+                    t.innerHTML = currentTheme === 'dark'
+                        ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+                        : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+                });
+            }
+            updateIcon();
+            toggles.forEach(t => t.addEventListener('click', () => {
+                currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', currentTheme);
+                updateIcon();
+            }));
+        })();
+
+        // Mobile Nav Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            navToggle.innerHTML = isOpen
+                ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+                : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+            });
+        });
+
+        // Modal Logic
+        const body = document.body;
+        function openModal(id) {
+            const m = document.getElementById(id);
+            m.classList.add('is-open');
+            body.style.overflow = 'hidden';
+            m.querySelector('.modal__close').focus();
+        }
+        function closeModal(id) {
+            const m = document.getElementById(id);
+            m.classList.remove('is-open');
+            body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', e => {
+                if (e.target === modal) closeModal(modal.id);
+            });
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.is-open').forEach(m => closeModal(m.id));
+            }
+        });
+
+        document.querySelectorAll('[role="button"]').forEach(el => {
+            el.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    el.click();
+                }
+            });
+        });
+
+        // Scroll Reveal Observer
+        const revealEls = document.querySelectorAll('.reveal');
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
